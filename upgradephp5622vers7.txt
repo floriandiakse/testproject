@@ -1,0 +1,39 @@
+
+http://phil.writesthisblog.com/php-7-debian/
+
+nano /etc/apt/sources.list.d/dotdeb.list
+#y ajouter : 
+deb http://packages.dotdeb.org jessie all
+deb-src http://packages.dotdeb.org jessie all
+
+# récup de la clé dotdeb
+wget http://www.dotdeb.org/dotdeb.gpg
+cat dotdeb.gpg | apt-key add -
+rm dotdeb.gpg
+
+#installer dotdeb
+apt-get update && apt-get upgrade
+
+#Identifier ses packages PHP 5
+dpkg -l | grep php5
+
+# copier la liste ici
+libapache2-mod-php5 
+owncloud-deps-php5
+php5
+php5-apcu
+php5-cgi
+php5-cli
+php5-common
+php5-curl
+php5-gd
+php5-intl
+php5-json
+php5-ldap
+php5-mcrypt
+php5-mysql
+php5-pgsql
+php5-readline
+php5-sqlite
+
+# 
